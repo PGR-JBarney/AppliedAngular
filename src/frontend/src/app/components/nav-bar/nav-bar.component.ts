@@ -46,6 +46,10 @@ export class NavBarComponent implements OnInit {
       path: 'home',
     },
     {
+      text: 'Gift planning',
+      path: 'gifts',
+    },
+    {
       text: 'About Us',
       path: 'about',
     },
