@@ -21,6 +21,17 @@ import {
       <span data-testid="current">{{ counter() }}</span>
       <button (click)="increment()" class="btn btn-primary">+</button>
     </div>
+
+    @if (!counterAtZero()) {
+      <div data-testid="fizzBuzz">
+        @if (counterDivisibleBy3()) {
+          <span>Fizz</span>
+        }
+        @if (counterDivisibleBy5()) {
+          <span>Buzz</span>
+        }
+      </div>
+    }
   `,
   styles: ``,
 })
@@ -36,4 +47,6 @@ export class UiComponent {
   }
 
   counterAtZero = computed(() => this.counter() === 0);
+  counterDivisibleBy3 = computed(() => this.counter() % 3 === 0);
+  counterDivisibleBy5 = computed(() => this.counter() % 5 === 0);
 }
