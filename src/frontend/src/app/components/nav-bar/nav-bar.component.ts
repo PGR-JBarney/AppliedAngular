@@ -51,6 +51,11 @@ export class NavBarComponent implements OnInit {
       featureGated: 'gift-giving',
     },
     {
+      text: 'ATM',
+      path: 'atm',
+      featureGated: 'atm',
+    },
+    {
       text: 'About Us',
       path: 'about',
     },
