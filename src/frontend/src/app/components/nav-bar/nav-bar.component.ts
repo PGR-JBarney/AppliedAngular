@@ -35,7 +35,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class NavBarComponent implements OnInit {
   #titleService = inject(Title);
-  siteName = signal('Applied Angular');
+  siteName = signal('Applied Angular!');
   // some fake change
   ngOnInit(): void {
     this.#titleService.setTitle(this.siteName());
@@ -46,8 +46,9 @@ export class NavBarComponent implements OnInit {
       path: 'home',
     },
     {
-      text: 'Gift planning',
+      text: 'Gift Planning',
       path: 'gifts',
+      featureGated: 'gift-giving',
     },
     {
       text: 'About Us',
