@@ -24,9 +24,8 @@ export const routes: Routes = [
   },
   {
     path: 'counter',
-    canMatch: [canMatchFeature('counter')],
     loadChildren: () =>
-      import('./counter/counter.routes').then((r) => r.COUNTER_ROUTES),
+      import('./features/counter/counter.routes').then((r) => r.COUNTER_ROUTES),
   },
   {
     path: '**',

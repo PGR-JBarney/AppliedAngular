@@ -5,13 +5,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   selector: 'app-counter',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet, RouterLink],
-  template: `
-    <div data-testid="counter-feature">
-      <a class="btn btn-primary" routerLink="ui">UI</a>
-      <a class="btn btn-primary" routerLink="prefs">Prefs</a>
+  template: `<div data-testid="counter-feature">
+    <div class="flex gap-8">
+      <a class="btn btn-primary btn-sm" routerLink="ui">Counter UI</a>
+      <a class="btn btn-primary btn-sm" routerLink="prefs">Prefs</a>
     </div>
-    <router-outlet />
-  `,
+    <div class="p-12">
+      <router-outlet />
+    </div>
+  </div>`,
   styles: ``,
 })
 export class CounterComponent {}

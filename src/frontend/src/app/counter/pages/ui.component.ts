@@ -20,18 +20,18 @@ import {
       </button>
       <span data-testid="current">{{ counter() }}</span>
       <button (click)="increment()" class="btn btn-primary">+</button>
-    </div>
 
-    @if (!counterAtZero()) {
-      <div data-testid="fizzBuzz">
-        @if (counterDivisibleBy3()) {
-          <span>Fizz</span>
-        }
-        @if (counterDivisibleBy5()) {
-          <span>Buzz</span>
-        }
-      </div>
-    }
+      @if (!counterAtZero()) {
+        <div data-testid="fizzBuzz">
+          @if (counterDivisibleBy3()) {
+            <span>Fizz</span>
+          }
+          @if (counterDivisibleBy5()) {
+            <span>Buzz</span>
+          }
+        </div>
+      }
+    </div>
   `,
   styles: ``,
 })
