@@ -1,16 +1,17 @@
 import { Routes } from '@angular/router';
-import { GiftsComponent } from './gifts.component';
-import { PeopleComponent } from './pages/people.component';
-import { PeopleEntryComponent } from './pages/people-entry.component';
-import { PeopleStore } from './services/people.store';
-import { PeopleTableComponent } from './pages/people-table.component';
 import { canMatchFeature } from '../../shared/feature-management/feature.guard';
+import { GiftsComponent } from './gifts.component';
+import { PeopleEntryComponent } from './pages/people-entry.component';
+import { PeopleTableComponent } from './pages/people-table.component';
+import { PeopleComponent } from './pages/people.component';
+import { GiftDataService } from './services/gift-data.service';
+import { PeopleStore } from './services/people.store';
 
 export const GIFT_ROUTES: Routes = [
   {
     path: '',
     component: GiftsComponent,
-    providers: [PeopleStore],
+    providers: [PeopleStore, GiftDataService],
     children: [
       {
         path: 'people',
@@ -20,6 +21,7 @@ export const GIFT_ROUTES: Routes = [
       {
         path: 'people',
         component: PeopleComponent,
+        canActivate: [],
       },
       {
         path: 'people-entry',
